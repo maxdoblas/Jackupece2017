@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>Twittola</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url("background.png");
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    v1.0
+  </div>
+  <center>
+    <h1 class="w3-jumbo">TWITTOLA</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large ">Know Your Karma</p>
+  </center>
+  <center>
+    <form action="">
+      <input  type="text"  id="twitterUser">
+    </form>
+    <button type="submit" onclick="UserAction()" >Search Karma</button>
+    <button type="submit" onclick="UserAction2()" >Buscar Karma</button>
+  </center>
+</div>
+<script>
+
+function UserAction() {
+
+  let twitterUser=document.getElementById('twitterUser').value;
+  console.log("Searching tweets of : "+twitterUser);
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "http://localhost:3000/twitter", false);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send(JSON.stringify({ text: twitterUser , language: "English"}));
+  var karma =xhttp.responseText;
+  console.log(karma);
+  if(karma>=0.5)window.location="bo.html";
+  else window.location="bad.html";
+}
+function UserAction2() {
+
+  let twitterUser=document.getElementById('twitterUser').value;
+  console.log("Searching tweets of : "+twitterUser);
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "http://localhost:3000/twitter", false);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send(JSON.stringify({ text: twitterUser , language: "Spanish"}));
+  var karma =xhttp.responseText;
+  console.log(karma);
+  if(karma>=0.5)window.location="bo.html";
+  else window.location="bad.html";
+}
+</script>
+
+</body>
+</html>
