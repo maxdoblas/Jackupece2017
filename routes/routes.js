@@ -103,35 +103,6 @@ function writeLog(success, type, statusCode, message) {
 };
 
 //twitter hackup
-/*
-
-
-var karma=0;
-var cc=0;
-
-var params = {screen_name: 'theseapost_mar', count: 10, include_rts: false};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  if (!error) {
-    for(var i=0;i<tweets.length;i++){
-      console.log(tweets[i].text);
-      getSentiment(tweets[i].text, "English", function (results) {
-        console.log(results);
-        if(results=="positive") karma++;
-        else if(results=="neutral") karma+=0.5;
-        cc++;
-        if(cc==tweets.length){
-          var r=0.0;
-          r=karma/cc;
-          console.log(karma/cc);
-        }
-      })
-    }
-  }
-});
-
-
-
-*/
 var client = new Twitter({
   consumer_key: 'XXXXXXXXXXXXXXXXXXXXX',
   consumer_secret: 'XXXXXXXXXXXXXXXXXXXXX',
