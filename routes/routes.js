@@ -133,10 +133,10 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 */
 var client = new Twitter({
-  consumer_key: 'I53SDy6RHG6dbweLdBUeBUVga',
-  consumer_secret: 'QoFnkdi5yirgxmvmO4aQnZeiyAAyoIlTi6IFEceMdy4cRWLBNy',
-  access_token_key: '1475615647-I6Jz9LrKmwz4yzYOpi7U7UVuiGzNCjR7KLtbMiU',
-  access_token_secret: '7xYzQ19bVr4zlC3pIgoHQtQtjKKdloBoENSu3kHmSGROV'
+  consumer_key: 'XXXXXXXXXXXXXXXXXXXXX',
+  consumer_secret: 'XXXXXXXXXXXXXXXXXXXXX',
+  access_token_key: 'XXXXXXXXXXXXXXXXXXXXX',
+  access_token_secret: 'XXXXXXXXXXXXXXXXXXXXX'
 });
 var appRouter = function(app) {
 
